@@ -18,7 +18,7 @@ export const DashboardContainer: React.FC = () => {
       <LineChart />
 
       {analitics.edad.map((item, index) => (
-        <p key={index}>{item.rango}</p>
+        <p key={`${item}-${index}`}>{item.rango}</p>
       ))}
     </>
   );
