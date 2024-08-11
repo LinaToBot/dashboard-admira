@@ -36,6 +36,6 @@ export interface AnalyticsState {
 
   demografia: {
     edad: EdadDemografia[];
-    género: GeneroDemografia[];
+    genero: GeneroDemografia[];
   };
 }

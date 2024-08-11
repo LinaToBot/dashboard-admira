@@ -62,7 +62,7 @@ const analyticsSlice = createSlice({
      * @param {PayloadAction<GeneroDemografia[]>} action - The action that contains the new GeneroDemografia data.
      */
     updateDemografiaGenero(state, action: PayloadAction<GeneroDemografia[]>) {
-      state.demografia.género = action.payload;
+      state.demografia.genero = action.payload;
     },
   },
 });
@@ -89,8 +89,10 @@ export const {
  */
 export const selectViews = (state: RootState) => state.analytics.vistasPagina;
 export const selectSessions = (state: RootState) => state.analytics.sesiones;
-export const selectDemography = (state: RootState) =>
-  state.analytics.demografia;
+export const selectDemographicAge = (state: RootState) =>
+  state.analytics.demografia.edad;
+export const selectDemographicGender = (state: RootState) =>
+  state.analytics.demografia.genero;
 
 // export const selectCount = (state: RootState) => state.counter.value;
 
