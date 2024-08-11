@@ -17,6 +17,15 @@ import {
   selectSessions,
 } from "../../../../app/analyticsData/analyticsSlice";
 
+/**
+ * TimeLineChart is a component that renders a line chart displaying
+ * page views and sessions over time using the Recharts library.
+ *
+ * It fetches data from Redux selectors and maps it into a format suitable
+ * for rendering two lines on the chart: one for page views and one for sessions.
+ *
+ * @returns {JSX.Element} The TimeLineChart component containing a responsive line chart.
+ */
 export const TimeLineChart: React.FC = () => {
   const pageViews = useAppSelector(selectViews);
   const sessions = useAppSelector(selectSessions);
