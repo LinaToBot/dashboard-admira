@@ -6,7 +6,7 @@ import {
   updateVistasPagina,
 } from "../../../app/analyticsData/analyticsSlice";
 // components.
-import { LineChart } from "./LineChart/LineChart";
+import { TimeLineChart } from "./TimeLineChart/TimeLineChart";
 
 export const DashboardContainer: React.FC = () => {
   const analitics = useAppSelector(selectDemography);
@@ -15,7 +15,7 @@ export const DashboardContainer: React.FC = () => {
   return (
     <>
       <p>DashboardContainer</p>
-      <LineChart />
+      <TimeLineChart />
 
       {analitics.edad.map((item, index) => (
         <p key={`${item}-${index}`}>{item.rango}</p>

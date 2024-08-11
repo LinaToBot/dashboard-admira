@@ -2,7 +2,7 @@
 import { GeneroTipo } from "../../app/analyticsData/analyticsInterface";
 
 /**
- * Analytics data metrics including page views, user sessions, and demographics.
+ * Analytics data metrics including page views, user sessions, and demographics ("Google Analytics").
  * @constant
  * @type {Object}
  * @property {Array<{ fecha: string, vistas: number }>} vistasPagina - A list of objects representing the views per page.
