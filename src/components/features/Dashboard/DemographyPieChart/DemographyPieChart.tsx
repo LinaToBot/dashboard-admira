@@ -1,15 +1,22 @@
 // libraries.
-import { PieChart, Pie, Tooltip, ResponsiveContainer } from "recharts";
+import { Tooltip } from "recharts";
 // hooks.
 import { useAppSelector } from "../../../../app/hooks";
+// slices.
 import {
   selectDemographicAge,
   selectDemographicGender,
 } from "../../../../app/analyticsData/analyticsSlice";
+// components: template.
+import { PieChartTemplate } from "../../../shared/PieChartTemplate";
 
-const CustomTooltip = ({ active, payload }: any) => {
-  const ages = useAppSelector(selectDemographicAge);
-
+const CustomTooltip = ({
+  active,
+  payload,
+}: {
+  active: boolean;
+  payload: any[];
+}) => {
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip">
@@ -37,35 +44,38 @@ export const DemographyPieChart: React.FC = () => {
 
   return (
     <div style={{ width: "30%", height: 300 }}>
-      <ResponsiveContainer>
-        <PieChart width={300} height={300}>
-          <Pie
-            dataKey="value"
-            data={data01}
-            cx={150}
-            cy={180}
-            outerRadius={80}
-            fill="#8884d8"
-            label
+      <PieChartTemplate
+        chartWidth={300}
+        chartHeight={300}
+        data={data01}
+        cx={150}
+        cy={180}
+        outerRadius={80}
+        fillColor={"#8884d8"}
+        tooltip={
+          <Tooltip
+            content={
+              <CustomTooltip
+                active={true}
+                payload={[
+                  { name: data01[0].name, value: data01[0].value, unit: "" },
+                ]}
+              />
+            }
           />
-          <Tooltip content={<CustomTooltip />} />
-        </PieChart>
-      </ResponsiveContainer>
-      <ResponsiveContainer>
-        <PieChart width={300} height={300}>
-          <Pie
-            dataKey="value"
-            data={data02}
-            cx={150}
-            cy={180}
-            innerRadius={40}
-            outerRadius={80}
-            fill="#82ca9d"
-            label
-          />
-          <Tooltip />
-        </PieChart>
-      </ResponsiveContainer>
+        }
+      />
+      <PieChartTemplate
+        chartWidth={300}
+        chartHeight={300}
+        data={data02}
+        cx={150}
+        cy={180}
+        innerRadius={40}
+        outerRadius={80}
+        fillColor={"#82ca9d"}
+        tooltip={<Tooltip />}
+      />
     </div>
   );
 };
