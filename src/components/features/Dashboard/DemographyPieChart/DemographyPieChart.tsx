@@ -10,6 +10,15 @@ import {
 // components: template.
 import { PieChartTemplate } from "../../../shared/PieChartTemplate";
 
+/**
+ * CustomTooltip is a custom tooltip component for the pie chart.
+ * It displays the label and value of the first item in the payload if active.
+ *
+ * @param {Object} props - The properties of the component.
+ * @param {boolean} props.active - Indicates if the tooltip is active.
+ * @param {Array} props.payload - The data passed to the tooltip.
+ * @returns {JSX.Element | null} The content of the tooltip or null if not active.
+ */
 const CustomTooltip = ({
   active,
   payload,
@@ -28,6 +37,15 @@ const CustomTooltip = ({
   return null;
 };
 
+/**
+ * DemographyPieChart is a component that renders two pie charts
+ * based on demographic data of ages and genders.
+ *
+ * It uses `PieChartTemplate` to render both charts and a custom `CustomTooltip`
+ * to display information for each section of the chart.
+ *
+ * @returns {JSX.Element} The DemographyPieChart component containing two pie charts.
+ */
 export const DemographyPieChart: React.FC = () => {
   const ages = useAppSelector(selectDemographicAge);
   const genders = useAppSelector(selectDemographicGender);
