@@ -25,7 +25,7 @@ export const analyticsData = {
       { rango: "18-24", porcentaje: 25 },
       { rango: "25-34", porcentaje: 40 },
     ],
-    género: [
+    genero: [
       { tipo: GeneroTipo.Hombre, porcentaje: 55 },
       { tipo: GeneroTipo.Mujer, porcentaje: 45 },
     ],
