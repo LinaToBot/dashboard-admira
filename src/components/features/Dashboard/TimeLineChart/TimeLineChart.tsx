@@ -11,7 +11,7 @@ import {
 } from "recharts";
 // hooks.
 import { useAppSelector } from "../../../../app/hooks";
-// slice.
+// slices.
 import {
   selectViews,
   selectSessions,
