@@ -10,7 +10,7 @@ import {
   Sesiones,
   VistasPagina,
 } from "./analyticsInterface";
-import { analyticsData } from "../../utils/data/analyticsData";
+import { analyticsData } from "../../utils/Data/analyticsData";
 
 /**
  * The initial state for the analytics slice, loaded from `analyticsData`.
