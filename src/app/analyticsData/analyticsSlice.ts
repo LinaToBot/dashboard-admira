@@ -1,7 +1,7 @@
 // libraries.
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // store.
-import type { RootState } from "../../app/store";
+import type { RootState } from "../store";
 // interface.
 import {
   AnalyticsState,
