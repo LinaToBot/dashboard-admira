@@ -1,7 +1,5 @@
 // components.s
 import { Home } from "./components/pages/Home";
-// assets.
-import logo from "./logo.svg";
 // styles.
 import "./App.css";
 
